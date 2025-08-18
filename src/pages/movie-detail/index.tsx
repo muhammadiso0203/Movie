@@ -2,7 +2,6 @@ import { memo } from "react";
 import { useParams } from "react-router-dom";
 import { useMovieDetail } from "./services/useMovieDetail";
 import { IMAGE_URL } from "../../shared/const";
-import MovieView from "../../shared/components/movie-view/MovieView";
 import Main from "../home/components/main";
 
 const MovieDetail = () => {
