@@ -145,5 +145,5 @@ const Movie = () => {
     </div>
   );
 };
-
+// use praram no
 export default memo(Movie);
