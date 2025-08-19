@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo} from "react";
 import { useMovie } from "./services/useMovie";
 import MovieView from "../../shared/components/movie-view/MovieView";
 import { Pagination, Select, Skeleton, type PaginationProps } from "antd";
