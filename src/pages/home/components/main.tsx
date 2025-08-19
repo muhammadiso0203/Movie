@@ -32,11 +32,11 @@ const Main: FC<Props> = ({ data }) => {
         {data?.slice(0, 4).map((movie: any) => (
           <div
             key={movie.id}
-            className="bg-gray-50 rounded-xl shadow-2xl text-center"
+            className="bg-gray-50 w-[300px] rounded-xl shadow-2xl text-center"
           >
             <div
               onClick={() => navigate(`/movie/${movie.id}`)}
-              className="w-[280px] h-[400px] bg-[#1D1D1D] rounded-xl overflow-hidden"
+              className="w-full bg-[#1D1D1D] rounded-xl overflow-hidden"
             >
               <img
                 loading="lazy"

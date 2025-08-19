@@ -5,7 +5,7 @@ import rasm2 from "../../../shared/assets/Rectangle 8.png";
 import rasm3 from "../../../shared/assets/Rectangle 9.png";
 import rasm4 from "../../../shared/assets/Rectangle 6.png";
 import chiziq from "../../../shared/assets/Vector (1).svg";
-import chiziq2 from "../../../shared/assets/Vector (2).svg"
+import chiziq2 from "../../../shared/assets/Vector (2).svg";
 
 const Home = () => {
   return (
