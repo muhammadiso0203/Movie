@@ -6,9 +6,9 @@ import { Clapperboard } from "lucide-react";
 const Header = () => {
   return (
     <header className="header_container mx-auto flex justify-between items-center p-2">
-      <div>
+      <NavLink to={"/"}>
         <img src={logo} alt="" />
-      </div>
+      </NavLink>
       <div>
         <NavLink to={"/movie"} className="flex items-center flex-col">
           <Clapperboard className="w-10 h-10" />
