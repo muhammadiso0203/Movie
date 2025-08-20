@@ -2,7 +2,7 @@ import { memo } from "react";
 import { useParams } from "react-router-dom";
 import { useMovieDetail } from "./services/useMovieDetail";
 import { IMAGE_URL } from "../../shared/const";
-import Main from "../home/components/main";
+import MovieView from "../../shared/components/movie-view/MovieView";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -80,7 +80,7 @@ const MovieDetail = () => {
       </div>
 
       <div className="mt-[240px]">
-        <Main data={similarData?.results} />
+        <MovieView data={similarData?.results.slice(0, 4)} />
       </div>
     </div>
   );
