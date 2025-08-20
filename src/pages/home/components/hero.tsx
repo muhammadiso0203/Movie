@@ -13,11 +13,11 @@ const Home = () => {
       <div>
         <img src={hero} alt="" />
       </div>
-      <div className="flex items-center justify-center gap-3">
+      <div className="flex items-center justify-center gap-3 max-md:hidden">
         <button className="w-12 h-12 bg-[#1D1D1D] rounded-[50%] cursor-pointer">
           <img src={chiziq} alt="" className="mx-auto" />
         </button>
-        <div className="flex justify-center mt-1 gap-1">
+        <div className="flex justify-center mt-1 gap-1 ">
           <img src={rasm4} alt="" />
           <img src={rasm1} alt="" />
           <img src={rasm2} alt="" />
