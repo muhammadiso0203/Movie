@@ -33,25 +33,25 @@ const Footer = () => {
           <ul className="flex flex-col gap-[18px]">
             <li className="font-semibold dark:text-white">О нас</li>
             <li>
-              <NavLink to="#" className="flex gap-2 items-center dark:text-white dark:text-white">
+              <NavLink to="#" className="flex gap-2 items-center dark:text-white">
                 <img src={file} alt="" />
                 Публичная оферта
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="flex gap-2 items-center dark:text-white dark:text-white">
+              <NavLink to="#" className="flex gap-2 items-center dark:text-white">
                 <img src={reklama} alt="" />
                 Реклама
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="flex gap-2 items-center dark:text-white dark:text-white">
+              <NavLink to="#" className="flex gap-2 items-center dark:text-white">
                 <img src={savol} alt="" />
                 F.A.Q
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="flex gap-2 items-center dark:text-white dark:text-white">
+              <NavLink to="#" className="flex gap-2 items-center dark:text-white">
                 <img src={kontakt} alt="" />
                 Контакты
               </NavLink>
