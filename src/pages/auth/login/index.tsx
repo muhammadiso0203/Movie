@@ -1,23 +1,21 @@
 import { Button, Form, Input, type FormProps } from "antd";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { api } from "../../../shared/api";
 import { clearSignInData } from "../../../lib/features/SignInSlice";
 import { setToken } from "../../../lib/features/auth";
-import type { RootState } from "../../../lib";
 
 type FieldType = {
   email: string;
   password?: string;
 };
 
+
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const initialValues = useSelector((state: RootState) => state.sigInSlice);
-
   const signIn = useMutation({
     mutationFn: (data: any) => api.post("/auth/login", data),
   });
@@ -32,7 +30,6 @@ const Login = () => {
       },
     });
   };
-
 
   return (
     <div className="container mx-auto mt-20 flex flex-col justify-center items-center ">
@@ -53,7 +50,7 @@ const Login = () => {
             { type: "email", message: "Email to`gri emas" },
           ]}
         >
-          <Input placeholder="Email kirgizing..." style={{padding:10}} />
+          <Input placeholder="Email kirgizing..." style={{ padding: 10 }} />
         </Form.Item>
 
         <Form.Item<FieldType>
@@ -61,11 +58,20 @@ const Login = () => {
           name="password"
           rules={[{ required: true, message: "iltimos parol kiriting" }]}
         >
-          <Input.Password placeholder="Parol kirgizing" style={{padding:10}}/>
+          <Input.Password
+            placeholder="Parol kirgizing"
+            style={{ padding: 10 }}
+          />
         </Form.Item>
 
         <Form.Item>
-          <Button style={{padding:20}} type="primary" htmlType="submit" block className="rounded-lg">
+          <Button
+            style={{ padding: 20 }}
+            type="primary"
+            htmlType="submit"
+            block
+            className="rounded-lg"
+          >
             <h1 className="text-[18px] font-medium">Login</h1>
           </Button>
         </Form.Item>
