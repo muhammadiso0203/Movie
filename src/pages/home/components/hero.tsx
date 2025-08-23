@@ -1,33 +1,95 @@
-import { memo } from "react";
-import hero from "../../../shared/assets/Rectangle 64.png";
-import rasm1 from "../../../shared/assets/Rectangle 7.png";
-import rasm2 from "../../../shared/assets/Rectangle 8.png";
-import rasm3 from "../../../shared/assets/Rectangle 9.png";
-import rasm4 from "../../../shared/assets/Rectangle 6.png";
-import chiziq from "../../../shared/assets/Vector (1).svg";
-import chiziq2 from "../../../shared/assets/Vector (2).svg";
+import { memo, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import smotri from "../../../shared/assets/Vector (4).svg";
+
+// @ts-ignore
+import "swiper/css";
+// @ts-ignore
+import "swiper/css/free-mode";
+// @ts-ignore
+import "swiper/css/navigation";
+// @ts-ignore
+import "swiper/css/thumbs";
+
+import "./style.css";
+import { useMovie } from "../../movie/services/useMovie";
+import { IMAGE_URL } from "../../../shared/const";
 
 const Home = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+  const { getMovies } = useMovie();
+  const { data } = getMovies();
+
   return (
-    <section className="container mx-auto">
-      <div>
-        <img src={hero} alt="" />
-      </div>
-      <div className="flex items-center justify-center gap-3 max-md:hidden">
-        <button className="w-12 h-12 bg-[#1D1D1D] rounded-[50%] cursor-pointer">
-          <img src={chiziq} alt="" className="mx-auto" />
-        </button>
-        <div className="flex justify-center mt-1 gap-1 ">
-          <img src={rasm4} alt="" />
-          <img src={rasm1} alt="" />
-          <img src={rasm2} alt="" />
-          <img src={rasm3} alt="" />
+    <div className="container mx-auto mt-5">
+      <Swiper
+        style={
+          {
+            "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-color": "#fff",
+          } as React.CSSProperties
+        }
+        loop={true}
+        spaceBetween={10}
+        navigation={true}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper2 rounded-xl"
+      >
+        <div>
+          {data?.results.map((movie: any) => (
+            <SwiperSlide key={movie.id}>
+              <div>
+                <img src={IMAGE_URL + movie.backdrop_path} />
+              </div>
+              <div className="absolute bottom-7 max-lg:hidden w-[380px]">
+                <div className="flex items-center justify-center gap-4 mb-7">
+                  <span className="bottom-20 text-white line-clamp-1">
+                    {movie.release_date}
+                  </span>
+                  <div className="w-1 h-1 rounded-[50%] bg-white"></div>
+                  <p
+                    className="text-white line-clamp-1"
+                    title={movie.title}
+                  >
+                    {movie.title}
+                  </p>
+                  <div className="w-1 h-1 rounded-[50%] bg-white"></div>
+                  <span className="bottom-20 text-white">
+                    {movie.adult ? "+18" : "+16"}
+                  </span>
+                </div>
+                <div className="flex items-center justify-center bg-white text-white w-96 h-[52px] rounded-xl cursor-pointer">
+                  <button className="flex items-center justify-center gap-2 text-[#C61F1F]">
+                    <img src={smotri} alt="" />
+                    <p>Смотреть</p>
+                  </button>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
         </div>
-        <button className="w-12 h-12 bg-[#1D1D1D] rounded-[50%] cursor-pointer">
-          <img src={chiziq2} alt="" className="mx-auto" />
-        </button>
-      </div>
-    </section>
+      </Swiper>
+      <Swiper 
+        onSwiper={setThumbsSwiper}
+        loop={true}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper hero-thumbs"
+        style={{ width: "37.6%" }}
+      >
+        {data?.results.map((movie: any) => (
+          <SwiperSlide className="rounded-xl overflow-hidden"  key={movie.id}>
+            <img src={IMAGE_URL + movie.backdrop_path} className="py-3" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 

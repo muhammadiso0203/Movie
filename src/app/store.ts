@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import like from "../pages/saved/store"
 
 export const store = configureStore({
   reducer: {
-    fake: () => "laylo"
+    fake: () => "laylo",
+    wishlist: like
   },
 });
 

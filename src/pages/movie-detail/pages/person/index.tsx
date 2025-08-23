@@ -19,11 +19,11 @@ const PersonDetail = () => {
             alt=""
           />
         </div>
-        <div>
+        <div className="dark:text-white">
           <h1 className="text-3xl">{data?.name}</h1>
           <strong>{data?.birthday}</strong>
           <p>{data?.biography}</p>
-          <div className="bg-blue-500 w-30 p-2 flex items-center justify-center rounded-[10px] text-white cursor-pointer mt-10">
+          <div className="bg-blue-500 w-30 p-2 flex items-center justify-center rounded-[10px] text-white cursor-pointer mt-10 ">
             <button onClick={() => navigate(-1)} className="cursor-pointer">Go back</button>
           </div>
         </div>

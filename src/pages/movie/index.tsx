@@ -139,11 +139,13 @@ const Movie = () => {
           current={Number(page)}
           onChange={onChange}
           showSizeChanger={false}
-          total={data?.total_results}
+          defaultPageSize={20}
+          total={ data?.total_results > 10000
+                ? 10000
+                : data?.total_results}
         />
       </div>
     </div>
   );
 };
-// use praram no
 export default memo(Movie);

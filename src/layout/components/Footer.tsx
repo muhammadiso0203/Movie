@@ -31,27 +31,27 @@ const Footer = () => {
 
         <div className="mt-[23px] ml-[120px] text-black max-md:ml-[30px] max-lg:ml-[90px]">
           <ul className="flex flex-col gap-[18px]">
-            <li className="font-semibold">О нас</li>
+            <li className="font-semibold dark:text-white">О нас</li>
             <li>
-              <NavLink to="#" className="flex gap-2 items-center">
+              <NavLink to="#" className="flex gap-2 items-center dark:text-white dark:text-white">
                 <img src={file} alt="" />
                 Публичная оферта
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="flex gap-2 items-center">
+              <NavLink to="#" className="flex gap-2 items-center dark:text-white dark:text-white">
                 <img src={reklama} alt="" />
                 Реклама
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="flex gap-2 items-center">
+              <NavLink to="#" className="flex gap-2 items-center dark:text-white dark:text-white">
                 <img src={savol} alt="" />
                 F.A.Q
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="flex gap-2 items-center">
+              <NavLink to="#" className="flex gap-2 items-center dark:text-white dark:text-white">
                 <img src={kontakt} alt="" />
                 Контакты
               </NavLink>
@@ -63,25 +63,25 @@ const Footer = () => {
           <ul className="flex flex-col gap-[18px]">
             <li className="font-semibold">Категории</li>
             <li>
-              <NavLink to="#" className="flex items-center gap-2">
+              <NavLink to="#" className="flex items-center gap-2 dark:text-white">
                 <img src={movie} alt="" />
                 Кино
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="flex items-center gap-2">
+              <NavLink to="#" className="flex items-center gap-2 dark:text-white">
                 <img src={teatr} alt="" />
                 Театр
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="flex items-center gap-2">
+              <NavLink to="#" className="flex items-center gap-2 dark:text-white">
                 <img src={konsert} alt="" />
                 Концерты
               </NavLink>
             </li>
             <li>
-              <NavLink to="#" className="flex items-center gap-2">
+              <NavLink to="#" className="flex items-center gap-2 dark:text-white">
                 <img src={sport} alt="" />
                 Спорт
               </NavLink>
@@ -90,15 +90,15 @@ const Footer = () => {
         </div>
 
         <div className="mt-[23px] ml-[120px] text-black max-md:ml-[30px] max-lg:ml-[90px]">
-          <ul className="flex flex-col">
+          <ul className="flex flex-col dark:text-white">
             <li className="font-semibold">Связаться с нами</li>
             <li className="text-[#C61F1F] text-[20px] mt-5">
               <a href="tel:+998958973338">+998 (95) 897-33-38</a>
             </li>
             <li className="mt-[54px] font-semibold">Социальные сети</li>
           </ul>
-          <div className="flex gap-5 mt-4">
-            <NavLink to={"#"}>
+          <div className="flex gap-5 mt-4 ">
+            <NavLink to={"https://www.instagram.com/muhammadiso7878"}>
               <img src={insta} alt="instagram" />
             </NavLink>
             <NavLink to={"#"}>
