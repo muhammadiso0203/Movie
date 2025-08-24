@@ -3,21 +3,20 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
-import { api } from "../../../shared/api";
 import { clearSignInData } from "../../../lib/features/SignInSlice";
 import { setToken } from "../../../lib/features/auth";
+import { api } from "../../../api";
 
 type FieldType = {
   email: string;
   password?: string;
 };
 
-
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const signIn = useMutation({
-    mutationFn: (data: any) => api.post("/auth/login", data),
+    mutationFn: (data: any) => api.post("/users/signin", data),
   });
 
   const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
@@ -25,7 +24,7 @@ const Login = () => {
       onSuccess: (res) => {
         dispatch(clearSignInData());
         dispatch(setToken(res?.data?.access_token));
-        navigate("/profile");
+        navigate("/users/me");
         console.log("ok");
       },
     });

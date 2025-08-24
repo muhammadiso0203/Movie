@@ -6,6 +6,7 @@ import Login from "../pages/auth/login";
 import Register from "../pages/auth/register";
 import Otp from "../pages/auth/otp";
 import Saved from "../pages/saved";
+import Profile from "../pages/auth/profile";
 const MainLayout = lazy(() => import("../layout/MainLayout"));
 const Home = lazy(() => import("../pages/home"));
 const Movie = lazy(() => import("../pages/movie"));
@@ -22,9 +23,10 @@ const AppRouters = () => {
         { index: true, element: <Home /> },
         { path: "movie", element: <Movie /> },
         { path: "search", element: <Search /> },
-        { path: "login", element: <Login /> },
+        { path: "users/signin", element: <Login /> },
         { path: "register", element: <Register /> },
-        { path: "otp", element: <Otp /> },
+        { path: "users/me", element: <Profile /> },
+        { path: "users/confirm-otp", element: <Otp /> },
         { path: "saved", element: <Saved /> },
         { path: "person/:id", element: <Person /> },
         {

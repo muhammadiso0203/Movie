@@ -13,15 +13,15 @@ const Otp = () => {
   const navigate = useNavigate();
 
   const sendOtp = useMutation({
-    mutationFn: (data: any) => api.post("/auth/verify-otp", data),
+    mutationFn: (data: any) => api.post("/users/confirm-otp", data),
   });
 
-  const onChange: OTPProps["onChange"] = (code) => {
+  const onChange: OTPProps["onChange"] = (otp) => {
     sendOtp.mutate(
-      { code, email },
+      { otp, email },
       {
         onSuccess: () => {
-          navigate("/otp");
+          navigate("/users/signin");
         },
       }
     );

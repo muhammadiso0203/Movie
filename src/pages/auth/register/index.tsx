@@ -6,7 +6,7 @@ import { useUser } from "../../../api/hooks";
 import { setSignInData } from "../../../lib/features/SignInSlice";
 
 type FieldType = {
-  name?: string;
+  full_name?: string;
   email: string;
   password: string;
 };
@@ -28,7 +28,7 @@ const Register = () => {
           setSignInData({ email: values.email, password: values.password })
         );
         const encode = btoa(values.email);
-        navigate(`/otp?e=${encode}`);
+        navigate(`/users/confirm-otp?e=${encode}`);
       },
     });
   };
@@ -48,7 +48,7 @@ const Register = () => {
       >
         <Form.Item<FieldType>
           label={<span className="dark:text-white">Name</span>}
-          name="name"
+          name="full_name"
           rules={[
             { required: true, message: "Iltimos ismingizni kiriting" },
             { type: "string" },
